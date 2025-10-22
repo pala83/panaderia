@@ -1,0 +1,91 @@
+[
+    {
+        "id": 1,
+        "name": "Budin de limón",
+        "price": 2500,
+        "category": "dulces",
+        "description": "Delicioso budin casero con sabor a limón.",
+        "imageUrl": "/images/budin-limon.png"
+    }
+,
+    {
+        "id": 2,
+        "name": "Medialunas",
+        "price": 1200,
+        "category": "dulces",
+        "description": "Medialunas hojaldradas, ideales para el desayuno.",
+        "imageUrl": "/images/medialunas.png"
+    },
+    {
+        "id": 3,
+        "name": "Facturas mixtas",
+        "price": 1400,
+        "category": "dulces",
+        "description": "Caja surtida de facturas: vigilantes, cañoncitos y bolas de fraile.",
+        "imageUrl": "/images/facturas.png"
+    },
+    {
+        "id": 4,
+        "name": "Pan francés",
+        "price": 500,
+        "category": "salados",
+        "description": "Baguette recién horneada con corteza crujiente.",
+        "imageUrl": "/images/pan-frances.png"
+    },
+    {
+        "id": 5,
+        "name": "Lomito en pan",
+        "price": 3200,
+        "category": "salados",
+        "description": "Pan tipo sándwich relleno con lomo y vegetales.",
+        "imageUrl": "/images/lomito-pan.png"
+    },
+    {
+        "id": 6,
+        "name": "Tarta de jamón y queso",
+        "price": 1800,
+        "category": "salados",
+        "description": "Porción de tarta casera de jamón y queso.",
+        "imageUrl": "/images/tarta-jamon-queso.png"
+    },
+    {
+        "id": 7,
+        "name": "Rosca de anís",
+        "price": 1500,
+        "category": "dulces",
+        "description": "Rosca tradicional con toque de anís y azúcar glas.",
+        "imageUrl": "/images/rosca-anis.png"
+    },
+    {
+        "id": 8,
+        "name": "Cachito de jamón",
+        "price": 900,
+        "category": "salados",
+        "description": "Bocadillo de masa hojaldrada relleno de jamón.",
+        "imageUrl": "/images/cachito-jamon.png"
+    },
+    {
+        "id": 9,
+        "name": "Brioche con crema",
+        "price": 1600,
+        "category": "dulces",
+        "description": "Suave brioche relleno de crema pastelera.",
+        "imageUrl": "/images/brioche-crema.png"
+    },
+    {
+        "id": 10,
+        "name": "Fugazza",
+        "price": 2000,
+        "category": "salados",
+        "description": "Fugazza con cebolla y orégano, ideal para compartir.",
+        "imageUrl": "/images/fugazza.png"
+    },
+    {
+        "id": 11,
+        "name": "Alfajores de maicena",
+        "price": 700,
+        "category": "dulces",
+        "description": "Alfajores caseros rellenos con dulce de leche y coco.",
+        "imageUrl": "/images/alfajores.png"
+    }
+]
