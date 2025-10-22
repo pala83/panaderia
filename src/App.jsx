@@ -12,6 +12,7 @@ function App() {
 				<Nav />
 				<Routes>
 					<Route path="/" element={<ItemListContainer />} />
+					<Route path="/category/:category" element={<ItemListContainer />} />
 					<Route path="/detail/:id" element={<ItemDetailContainer />} />
 				</Routes>
 			</CartProvider>
