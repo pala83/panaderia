@@ -4,33 +4,47 @@ import { useParams } from "react-router-dom";
 
 export const ItemDetailContainer = () => {
     const [detail, setDetail] = useState({});
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
     const { id } = useParams();
 
     useEffect(() => {
-        fetch("/data/products.json")
+        setLoading(true);
+        setError(null);
+        const base = import.meta.env.DEV
+            ? "/api"
+            : import.meta.env.VITE_API_BASE;
+        fetch(`${base}/products/${id}`)
             .then((response) => {
                 if (!response.ok)
                     throw new Error("Network response was not ok");
                 return response.json();
             })
-            .then((data) => {
-                const product = data.find(
-                    (item) => item.id === parseInt(id, 10)
-                );
-                if (!product) throw new Error("Product not found");
+            .then((product) => {
+                const isNotFoundString =
+                    typeof product === "string" &&
+                    product.toLowerCase().includes("not found");
+                if (!product || isNotFoundString || !product.id)
+                    throw new Error("Product not found");
                 setDetail(product);
             })
             .catch((error) => {
                 console.error("Error fetching product details:", error);
-            });
+                setError(error.message || "Unknown error");
+            })
+            .finally(() => setLoading(false));
     }, [id]);
 
     return (
-        <main>
-            {Object.keys(detail).length ? (
+        <main className="p-4 sm:ml-64">
+            {loading && <p>Loading product details...</p>}
+            {!loading && error && (
+                <p className="text-center text-gray-500 dark:text-gray-400">
+                    Producto no encontrado
+                </p>
+            )}
+            {!loading && !error && Object.keys(detail).length > 0 && (
                 <ItemDetail detail={detail} />
-            ) : (
-                <p>Loading product details...</p>
             )}
         </main>
     );
