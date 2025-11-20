@@ -16,9 +16,12 @@ export const ItemListContainer = () => {
 			.catch((error) => console.error('Error fetching products:', error));
 	}, []);
 
+	// esto porque los nombres de categorias en el json no son consistentes
 	const normalize = (s) => (s ?? '').toString().trim().toLowerCase();
+	// esto porque puse las categorias en plural y me da fiaca acomodarlas
 	const toSingular = (s) => (s.endsWith('s') ? s.slice(0, -1) : s);
 	const routeCategory = toSingular(normalize(category));
+	// esto porque no quiero volver a hacer la llamada a la api
 	const list = routeCategory
 		? products.filter(
 				(p) => toSingular(normalize(p.category)) === routeCategory,

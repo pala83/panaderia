@@ -1,6 +1,6 @@
 import { Button } from '@components/Button.jsx';
 import { useCartContext } from '@contexts/CartContext/useCartContext';
-import { useId, useState } from 'react';
+import React, { useId, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export const Nav = () => {
@@ -11,6 +11,13 @@ export const Nav = () => {
 
 	const handleToggle = () => setOpen((v) => !v);
 	const handleClose = () => setOpen(false);
+
+	// listen for app-level toggle events (from MobileActions)
+	React.useEffect(() => {
+		const onToggle = () => setOpen((v) => !v);
+		document.addEventListener('app:toggle-sidebar', onToggle);
+		return () => document.removeEventListener('app:toggle-sidebar', onToggle);
+	}, []);
 
 	return (
 		<>

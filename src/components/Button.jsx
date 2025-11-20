@@ -4,7 +4,7 @@ export const BUTTON_VARIANTS = {
 	secondary:
 		'text-gray-900 bg-gray-200 font-medium rounded-lg text-sm px-4 py-2.5 text-center hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200 disabled:opacity-60 disabled:cursor-not-allowed',
 	danger:
-		'text-white bg-red-600 font-medium rounded-lg text-sm px-4 py-2.5 text-center hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-red-300 disabled:opacity-60 disabled:cursor-not-allowed',
+		'text-white bg-red-600 font-medium rounded-lg text-sm text-center hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-red-300 disabled:opacity-60 disabled:cursor-not-allowed',
 	ghost:
 		'bg-transparent text-gray-100 hover:bg-gray-800/50 rounded-md px-3 py-2 text-sm disabled:opacity-60 disabled:cursor-not-allowed',
 	counter:
