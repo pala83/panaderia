@@ -1,10 +1,17 @@
+import { Count } from '@components/count/Count';
 import { Item } from '@components/Item/Item';
 import { useCartContext } from '@contexts/CartContext/useCartContext';
 
 export const ItemDetail = ({ detail }) => {
 	const { addItem } = useCartContext();
+
+	const handleAddToCart = (quantity) => {
+		addItem({ ...detail, quantity });
+	};
+
 	return (
 		<Item {...detail}>
+			{/* 
 			<button
 				type="button"
 				onClick={() => addItem(detail)}
@@ -12,6 +19,13 @@ export const ItemDetail = ({ detail }) => {
 			>
 				Enviar al carrito
 			</button>
+			 */}
+			<Count
+				btnText="Add to Cart"
+				stock={detail.stock}
+				initial={1}
+				onConfirm={handleAddToCart}
+			></Count>
 		</Item>
 	);
 };

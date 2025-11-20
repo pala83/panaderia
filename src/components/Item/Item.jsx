@@ -51,8 +51,10 @@ export const Item = ({
 						{Number.isFinite(reviews) ? reviews.toFixed(1) : '0.0'}
 					</span>
 				</div>
-
-				<div className="flex items-center justify-between">
+				<p className="prose prose-invert">{description}</p>
+				<div
+					className={`flex flex-wrap items-center ${children ? 'gap-2 justify-end' : 'justify-between'} `}
+				>
 					<span className="text-3xl font-bold text-gray-900 dark:text-white">
 						${price}
 					</span>
