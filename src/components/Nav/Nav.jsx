@@ -1,6 +1,5 @@
-import { Button } from '@components/Button.jsx';
 import { useCartContext } from '@contexts/CartContext/useCartContext';
-import React, { useId, useState } from 'react';
+import { useEffect, useId, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export const Nav = () => {
@@ -9,11 +8,9 @@ export const Nav = () => {
 	const sidebarId = useId();
 	const total = getTotalItems?.() ?? 0;
 
-	const handleToggle = () => setOpen((v) => !v);
 	const handleClose = () => setOpen(false);
 
-	// listen for app-level toggle events (from MobileActions)
-	React.useEffect(() => {
+	useEffect(() => {
 		const onToggle = () => setOpen((v) => !v);
 		document.addEventListener('app:toggle-sidebar', onToggle);
 		return () => document.removeEventListener('app:toggle-sidebar', onToggle);
@@ -21,28 +18,6 @@ export const Nav = () => {
 
 	return (
 		<>
-			<Button
-				aria-controls={sidebarId}
-				aria-expanded={open}
-				onClick={handleToggle}
-				className="inline-flex items-center mt-2 ms-3 sm:hidden"
-			>
-				<span className="sr-only">Open sidebar</span>
-				<svg
-					className="w-6 h-6"
-					aria-hidden="true"
-					fill="currentColor"
-					viewBox="0 0 20 20"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						clipRule="evenodd"
-						fillRule="evenodd"
-						d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
-					/>
-				</svg>
-			</Button>
-
 			{open && (
 				<div
 					onClick={handleClose}
@@ -117,7 +92,7 @@ export const Nav = () => {
 						</li>
 						<li>
 							<Link
-								to="#"
+								to="/admin"
 								onClick={handleClose}
 								className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
 							>
@@ -130,7 +105,7 @@ export const Nav = () => {
 								>
 									<path d="M17 5.923A1 1 0 0 0 16 5h-3V4a4 4 0 1 0-8 0v1H2a1 1 0 0 0-1 .923L.086 17.846A2 2 0 0 0 2.08 20h13.84a2 2 0 0 0 1.994-2.153L17 5.923ZM7 9a1 1 0 0 1-2 0V7h2v2Zm0-5a2 2 0 1 1 4 0v1H7V4Zm6 5a1 1 0 1 1-2 0V7h2v2Z" />
 								</svg>
-								<span className="flex-1 ms-3 whitespace-nowrap">Cart</span>
+								<span className="flex-1 ms-3 whitespace-nowrap">Admin</span>
 								{total > 0 && (
 									<span className="inline-flex items-center justify-center w-5 h-5 text-xs font-medium text-white bg-blue-600 rounded-full ml-2">
 										{total}

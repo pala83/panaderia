@@ -1,3 +1,4 @@
+import { ProductFormContainer } from '@components/adminComponents/ProductFormContainer/ProductFormContainer';
 import CartDrawer from '@components/CartDrawer/CartDrawer';
 import { ItemDetailContainer } from '@components/ItemDetailContainer/ItemDetailContainer';
 import { ItemListContainer } from '@components/ItemListContainer/ItemListContainer';
@@ -17,6 +18,7 @@ function App() {
 						<Route path="/" element={<ItemListContainer />} />
 						<Route path="/category/:category" element={<ItemListContainer />} />
 						<Route path="/detail/:id" element={<ItemDetailContainer />} />
+						<Route path="/admin" element={<ProductFormContainer />} />
 						<Route path="*" element={<h2>404 Not Found</h2>} />
 					</Routes>
 					<CartDrawer />
