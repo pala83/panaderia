@@ -1,4 +1,4 @@
-import { Count } from '@components/count/Count';
+import { Count } from '@components/Count/Count';
 import { Item } from '@components/Item/Item';
 import { useCartContext } from '@contexts/CartContext/useCartContext';
 
