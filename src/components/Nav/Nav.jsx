@@ -27,7 +27,7 @@ export const Nav = () => {
                     aria-controls={sidebarId}
                     aria-expanded={open}
                     onClick={handleToggle}
-                    className="inline-flex items-center m-3 sm:hidden"
+                    className="inline-flex items-center m-5 sm:hidden"
                 >
                     <span className="sr-only">Open sidebar</span>
                     <svg
