@@ -38,8 +38,8 @@ export const CartDrawer = () => {
 	const simulateCheckout = (ms = 1200) =>
 		new Promise((resolve, reject) => {
 			setTimeout(() => {
-				// simulate occasional failure (12% chance)
-				if (Math.random() < 0.12) {
+				// simulate occasional failure (5% chance)
+				if (Math.random() < 0.05) {
 					reject(new Error('Error de red. Intenta nuevamente.'));
 				} else {
 					resolve();
