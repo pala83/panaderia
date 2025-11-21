@@ -32,7 +32,7 @@ export const Login = () => {
 	};
 
 	return (
-		<form onSubmit={handleOnSubmit}>
+		<form className='space-y-4 w-md' onSubmit={handleOnSubmit}>
 			<InputForm
 				label="Nombre:"
 				name="name"

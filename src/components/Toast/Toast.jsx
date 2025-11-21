@@ -74,6 +74,18 @@ const typeStyles = {
 			</svg>
 		),
 	},
+	apu: {
+		accent: 'border-orange-500',
+		icon: (
+			<div className="w-20 h-30 overflow-hidden rounded-t-lg">
+				<img
+					src="/apu.png"
+					alt="Apu"
+					className="w-full h-30 object-cover object-top"
+				/>
+			</div>
+		),
+	},
 };
 
 function ToastItem({
@@ -101,6 +113,10 @@ function ToastItem({
 	}, [duration, startDismiss]);
 
 	const { accent, icon } = typeStyles[type] ?? typeStyles.info;
+	
+	// Mensaje especial para Apu
+	const displayTitle = type === 'apu' ? 'Gracias, vuelva prontos' : title;
+	const displayText = type === 'apu' ? '' : text;
 
 	return (
 		<button
@@ -116,10 +132,10 @@ function ToastItem({
 		>
 			<div className="mt-0.5">{icon}</div>
 			<div className="flex-1">
-				{title && (
-					<div className="text-sm font-semibold leading-5">{title}</div>
+				{displayTitle && (
+					<div className="text-sm font-semibold leading-5 pt-3">{displayTitle}</div>
 				)}
-				{text && <div className="prose prose-invert">{text}</div>}
+				{displayText && <div className="prose prose-invert">{displayText}</div>}
 				<div className="mt-1 text-[11px] opacity-60">Click para cerrar</div>
 			</div>
 		</button>

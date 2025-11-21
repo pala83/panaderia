@@ -30,7 +30,7 @@ export const InputForm = ({
 		...inputProps,
 		className: error
 			? 'w-full overflow-clip rounded-sm border border-red-500 bg-neutral-50/50 text-sm text-red-500 file:mr-4 file:border-none file:bg-neutral-50 file:px-4 file:py-2 file:font-medium file:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black disabled:cursor-not-allowed disabled:opacity-75 dark:bg-neutral-900/50 dark:file:bg-neutral-900 dark:file:text-white dark:focus-visible:outline-white'
-			: 'w-full max-w-md overflow-clip rounded-radius border border-neutral-300 bg-neutral-50/50 text-sm file:mr-4 file:border-none file:bg-neutral-50 file:px-4 file:py-2 file:font-medium file:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black disabled:cursor-not-allowed disabled:opacity-75 dark:border-neutral-700 dark:bg-neutral-900/50 dark:file:bg-neutral-900 dark:file:text-white dark:focus-visible:outline-white',
+			: 'w-full overflow-clip rounded-sm border border-neutral-300 bg-neutral-50/50 text-sm file:mr-4 file:border-none file:bg-neutral-50 file:px-4 file:py-2 file:font-medium file:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black disabled:cursor-not-allowed disabled:opacity-75 dark:border-neutral-700 dark:bg-neutral-900/50 dark:file:bg-neutral-900 dark:file:text-white dark:focus-visible:outline-white',
 	};
 
 	if (type === 'file') {
@@ -40,7 +40,7 @@ export const InputForm = ({
 	}
 
 	return (
-		<div className="flex my-3 w-full max-w-xs flex-col gap-1 text-neutral-600 dark:text-neutral-300">
+		<div className="flex my-3 w-full flex-col gap-1 text-neutral-600 dark:text-neutral-300">
 			<label
 				className={
 					error

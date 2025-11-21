@@ -2,7 +2,6 @@ import { ProductFormContainer } from '@components/adminComponents/ProductFormCon
 import CartDrawer from '@components/CartDrawer/CartDrawer';
 import { ItemDetailContainer } from '@components/ItemDetailContainer/ItemDetailContainer';
 import { ItemListContainer } from '@components/ItemListContainer/ItemListContainer';
-import MobileActions from '@components/MobileActions/MobileActions';
 import { CartProvider } from '@contexts/CartContext/CartProvider';
 import { ToastProvider } from '@contexts/ToastContext/ToastProvider';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -10,12 +9,14 @@ import { MainLayout } from './layouts/MainLayout';
 import { AdminLayout } from './layouts/AdminLayout';
 import { ProtectedRouts } from '@components/ProtectedRouts/ProtectedRouts';
 import { Login } from '@components/Login/Login';
+import { Nav } from '@components/Nav/Nav';
 
 function App() {
 	return (
 		<BrowserRouter>
 			<ToastProvider>
 				<CartProvider>
+                    <Nav />
 					<Routes>
 						<Route element={<MainLayout />}>
 							<Route path="/" element={<ItemListContainer />} />
@@ -40,7 +41,6 @@ function App() {
 						</Route>
 					</Routes>
 					<CartDrawer />
-					<MobileActions />
 				</CartProvider>
 			</ToastProvider>
 		</BrowserRouter>

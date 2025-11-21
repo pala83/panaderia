@@ -20,6 +20,8 @@ export const AuthProvider = ({ children }) => {
 		return false;
 	};
 
+    const isLoggedIn = !!user;
+
 	const logout = () => {
 		sessionStorage.removeItem('authUser');
 		setUser(null);
@@ -27,7 +29,7 @@ export const AuthProvider = ({ children }) => {
 	};
 
 	return (
-		<AuthContext.Provider value={{ user, login, logout }}>
+		<AuthContext.Provider value={{ user, login, logout, isLoggedIn }}>
 			{children}
 		</AuthContext.Provider>
 	);

@@ -2,8 +2,8 @@ import { Outlet } from 'react-router-dom';
 
 export const AdminLayout = () => {
 	return (
-		<section>
+		<main className='w-screen h-screen flex justify-center items-center'>
 			<Outlet />
-		</section>
+		</main>
 	);
 };

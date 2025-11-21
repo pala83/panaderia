@@ -49,13 +49,15 @@ export const CartProvider = ({ children }) => {
 		});
 	};
 
-	const clearCart = () => {
+	const clearCart = (showNotification = true) => {
 		setCart([]);
-		showToast({
-			type: 'info',
-			title: 'Carrito vacío',
-			text: 'Se limpió el carrito.',
-		});
+		if (showNotification) {
+			showToast({
+				type: 'info',
+				title: 'Carrito vacío',
+				text: 'Se limpió el carrito.',
+			});
+		}
 	};
 
 	const getTotalItems = () => {
@@ -72,11 +74,9 @@ export const CartProvider = ({ children }) => {
 	};
 
 	const checkout = () => {
-		clearCart();
+		clearCart(false); // No mostrar notificación de carrito vacío
 		showToast({
-			type: 'success',
-			title: 'Compra realizada',
-			text: 'Gracias por su compra.',
+			type: 'apu',
 		});
 	};
 

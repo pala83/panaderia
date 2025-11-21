@@ -1,4 +1,5 @@
 import { ProductFormUI } from '@components/adminComponents/ProductFormUI/ProductFormUI';
+import { useToast } from '@contexts/ToastContext/useToast';
 import { createProduct } from '@services/products';
 import { uploadToImgbb } from '@services/uploadImage';
 import { validateProducts } from '@utils/validateProducts';
@@ -8,6 +9,7 @@ export const ProductFormContainer = () => {
 	const [loading, setLoading] = useState(false);
 	const [file, setFile] = useState(null);
 	const [errors, setErrors] = useState({});
+    const { showToast } = useToast();
 	const [product, setProduct] = useState({
 		name: '',
 		price: '',
@@ -44,7 +46,11 @@ export const ProductFormContainer = () => {
 			};
 
 			await createProduct(productData);
-			alert('Producto creado con exito');
+            showToast({
+                type: 'success',
+                title: 'Producto creado',
+                text: `Bienvenido ${product.name} 🫂, ahora formas parte de nuestro catálogo.`,
+            })
 			setProduct({
 				name: '',
 				price: '',

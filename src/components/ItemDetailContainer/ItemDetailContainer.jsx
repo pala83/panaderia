@@ -33,7 +33,8 @@ export const ItemDetailContainer = () => {
 	}, [id]);
 
 	return (
-		<main className="p-4 sm:ml-64">
+		<>
+            <h1 className='text-4xl font-bold px-4 pt-10'>¡Bienvenidos a nuestra tienda!</h1>
 			{loading && <p>Loading product details...</p>}
 			{!loading && error && (
 				<p className="text-center text-gray-500 dark:text-gray-400">
@@ -43,6 +44,6 @@ export const ItemDetailContainer = () => {
 			{!loading && !error && Object.keys(detail).length > 0 && (
 				<ItemDetail detail={detail} />
 			)}
-		</main>
+		</>
 	);
 };

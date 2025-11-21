@@ -6,11 +6,18 @@ import { useParams } from 'react-router-dom';
 export const ItemListContainer = () => {
 	const [products, setProducts] = useState([]);
 	const { category } = useParams() ?? {};
+	
 	useEffect(() => {
 		getProducts()
 			.then((data) => setProducts(data))
 			.catch((error) => console.error('Error fetching products:', error));
 	}, []);
+
+	const handleProductDeleted = (deletedProductId) => {
+		setProducts((prevProducts) => 
+			prevProducts.filter((p) => p.id !== deletedProductId)
+		);
+	};
 
 	// esto porque los nombres de categorias en el json no son consistentes
 	const normalize = (s) => (s ?? '').toString().trim().toLowerCase();
@@ -25,9 +32,9 @@ export const ItemListContainer = () => {
 		: products;
 
 	return (
-		<main className="p-4 sm:ml-64">
-			<h2>¡Bienvenidos a nuestra tienda!</h2>
-			<ItemList list={list} />
-		</main>
+		<>
+			<h1 className='text-4xl font-bold px-4 pt-10'>¡Bienvenidos a nuestra tienda!</h1>
+			<ItemList list={list} onProductDeleted={handleProductDeleted} />
+		</>
 	);
 };

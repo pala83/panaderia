@@ -25,6 +25,7 @@ export const MobileActions = () => {
 				className="pointer-events-auto relative w-12 h-12 flex items-center"
 				aria-label="Open cart"
 			>
+                {/* 
 				<svg
 					className="w-10 h-10"
 					fill="none"
@@ -41,6 +42,22 @@ export const MobileActions = () => {
 						d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 6m5-6v6m4-6v6m1-10h.01"
 					/>
 				</svg>
+                 */}
+                <svg 
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    aria-label='true'
+                    focusable="false"
+                    strokeLinecap="round"
+                    strokeLinejoin="round">
+                    <title>Shopping Cart</title>
+                    <circle cx="8" cy="21" r="1"/>
+                    <circle cx="19" cy="21" r="1"/>
+                    <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+                </svg>
 				{getTotalItems() > 0 && (
 					<span className="absolute -top-1 -right-1 inline-flex items-center justify-center w-5 h-5 text-xs font-medium text-white bg-red-600 rounded-full pointer-events-none">
 						{getTotalItems()}
