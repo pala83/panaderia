@@ -1,16 +1,13 @@
 import { Button } from '@components/Button';
 import { useAuthContext } from '@contexts/AuthContext/useAuthContext';
-import { useCartContext } from '@contexts/CartContext/useCartContext';
 import { useEffect, useId, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 export const Nav = () => {
-	const { getTotalItems } = useCartContext();
     const { isLoggedIn, logout } = useAuthContext();
 	const location = useLocation();
 	const [open, setOpen] = useState(false);
 	const sidebarId = useId();
-	const total = getTotalItems?.() ?? 0;
 	const isAdminRoute = location.pathname.startsWith('/admin');
 
     const handleToggle = () => setOpen((v) => !v);
@@ -58,7 +55,7 @@ export const Nav = () => {
 
 			<aside
 				id={sidebarId}
-				className={`fixed top-0 left-0 z-40 w-64 h-screen transition-transform ${
+				className={`fixed top-0 left-0 z-40 w-64 h-full max-h-screen transition-transform ${
 					open ? 'translate-x-0' : '-translate-x-full'
 				} sm:translate-x-0`}
 				aria-label="Sidebar"

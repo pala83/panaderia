@@ -80,7 +80,7 @@ export const CartDrawer = () => {
 			/>
 
 			<aside
-				className={`fixed top-0 right-0 z-40 h-screen w-full sm:w-96 bg-white dark:bg-gray-900 shadow-xl transform transition-transform duration-200 ${
+				className={`fixed top-0 right-0 z-40 h-full max-h-screen w-full sm:w-96 bg-white dark:bg-gray-900 shadow-xl transform transition-transform duration-200 ${
 					open ? 'translate-x-0' : 'translate-x-full'
 				}`}
 				aria-hidden={!open}
